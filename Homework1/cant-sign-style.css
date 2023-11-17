@@ -1,0 +1,107 @@
+:root {
+  --white: white;
+  --black: black;
+  --grey: #f0f0f0;
+  --darkgrey: #c1c1c1;
+  --boldgrey: #979797;
+  --subgrey: #b8b8b8;
+  --svggrey: #cfcfcf;
+}
+
+body {
+  background: url("background.jpeg"), lightgray 50% / cover no-repeat;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 1440px;
+  height: 1024px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container-title {
+  color: var(--white);
+  font-family: Inter;
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  margin: 201px 305px 34px 356px;
+}
+.container-sub-title {
+  color: var(--white);
+  font-family: Inter;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.container-cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 82px;
+  margin: 106px 184px 172px 170px;
+}
+.container-cards-box1,
+.container-cards-box2,
+.container-cards-box3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 307px;
+  height: 351px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background: var(--white);
+}
+.container-cards-box1 svg,
+.container-cards-box2 svg,
+.container-cards-box3 svg {
+  width: 145px;
+  height: 145px;
+  flex-shrink: 0;
+  fill: var(--svggrey);
+  margin: 26px 81px 1px 81px;
+}
+
+.container-cards-box1 h4,
+.container-cards-box2 h4,
+.container-cards-box3 h4 {
+  color: var(--boldgrey);
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.container-cards-box1 p,
+.container-cards-box2 p,
+.container-cards-box3 p {
+  color: var(--subgrey);
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.container-cards-box1 p {
+  width: 221px;
+}
+.container-cards-box3 p {
+  width: 221px;
+  margin-bottom: -81px;
+}
+.container-cards-box2 p {
+  width: 203px;
+  height: 21px;
+  flex-shrink: 0;
+}
