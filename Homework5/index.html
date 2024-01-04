@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notepad App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,400;1,9..40,100;1,9..40,200;1,9..40,300&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <h1>Notepad App</h1>
+        <button class="create-button" @click="createNote">Create Note</button>
+      </div>
+      <div class="notes-list">
+        <div v-for="note in notes" :key="note.id" @click="viewNote(note.id)">
+          <h3>{{ note.title }}</h3>
+          <p>
+            {{ note.content.substring(0, 50) }}{{ note.content.length > 50 ?
+            '...' : '' }}
+          </p>
+        </div>
+      </div>
+      <div v-if="selectedNote">
+        <h2>{{ selectedNote.title }}</h2>
+        <textarea v-model="selectedNote.content"></textarea>
+        <button class="action-button" @click="saveNote">Save</button>
+        <button class="action-button" @click="deleteNote">Delete</button>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
