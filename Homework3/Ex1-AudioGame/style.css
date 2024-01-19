@@ -1,0 +1,13 @@
+body{
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    width:5em;
+    aspect-ratio: 1;
+}
+.highlight{
+    background-color: yellow;
+}
