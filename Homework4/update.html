@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Record</title>
+</head>
+<body>
+    <form method="POST" action="{{ url_for('update', id=record['id']) }}">
+        <h1>Update Product</h1>
+        <label>Nume</label>
+        <input type="text" name="name" value="{{ record['name'] }}">
+        <label>Pret</label>
+        <input type="text" name="price" value="{{ record['price'] }}">
+        <label>Cantitate</label>
+        <input type="text" name="quantity" value="{{ record['cantitate'] }}">
+        <label>Descriere</label>
+        <input class = "last-input"type="text" name="description" value="{{ record['descriere'] }}">
+        <input type="submit" value="Update Record">
+    </form>
+    <a class = "a" href="/">Go home</a>
+</body>
+<style>
+    body{
+        box-sizing: border-box;
+        height:100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .a{
+       all:unset;
+       min-width: 5em; 
+       height:1em;
+       margin-left:auto;
+       margin-right: auto;
+       align-self: center;
+       border:1px solid black;
+       text-align: center;
+       padding: 0.5em;
+       border-radius: 1em;
+       cursor: pointer;
+    }
+    input{
+        all:unset;
+        margin:0.5em 1em;
+        padding-left:1em;
+        border:1px solid black;
+        width:95%;
+        margin-left: auto;
+        margin-right:auto;
+        border-radius: 2em;
+    }
+    label{
+        text-align: left;
+    }
+    form:first-child{
+        padding: 1em;
+        border-radius: 1em;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        border:3px solid black;
+        margin-bottom: 2em;
+    }
+    .last-input{
+        margin-bottom:2em;
+    }
+    input[type = "submit"]{
+       all:unset;
+       min-width: 5em; 
+       height:2em;
+       margin-left:auto;
+       margin-right: auto;
+       align-self: center;
+       border:1px solid black;
+       text-align: center;
+       padding: 0.5em;
+       border-radius: 1em;
+       cursor: pointer;
+    }
+
+</style>
+</html>

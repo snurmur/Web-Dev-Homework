@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nume</th>
+                <th>Pret</th>
+                <th>Stoc</th>
+                <th>Descriere</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr class="active-row">
+                <td>{{row['name']}}</td>
+                <td>{{row['price']}}</td>
+                <td>{{row['cantitate']}}</td>
+                <td>{{row['descriere']}}</td>
+                <td><a href="{{ url_for('update', id=row['id']) }}">Update</a></td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+    <a class="a" href="/">Go home</a>
+</body>
+<style>
+    .table {
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .a {
+        all: unset;
+        min-width: 5em;
+        height: 1em;
+        margin-left: auto;
+        margin-right: auto;
+        align-self: center;
+        border: 1px solid black;
+        text-align: center;
+        padding: 0.5em;
+        border-radius: 1em;
+        cursor: pointer;
+    }
+
+    .table thead {
+        background-color: #009879;
+        color: #ffffff;
+        text-align: left;
+        border-bottom: 3px solid black;
+    }
+
+    .table th,
+    .table td {
+        padding: 12px 15px;
+    }
+
+    .table tbody tr {
+        border-bottom: 1px solid #dddddd;
+    }
+
+    .table tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+    }
+
+    .table tbody tr:last-of-type {
+        border-bottom: 2px solid #009879;
+    }
+
+
+    .table tbody tr.active-row {
+        font-weight: bold;
+        color: #009879;
+    }
+
+
+
+
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+</style>
+
+</html>
